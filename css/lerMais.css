@@ -1,0 +1,26 @@
+.conteudo {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+
+.conteudo.expandido {
+  -webkit-line-clamp: unset;
+  display: block;
+}
+
+
+.ler-mais {
+  margin-top: 10px;
+  background: none;
+  border: none;
+  color: #E07B67;
+  cursor: pointer;
+  font-family: Inter;
+  font-size: 16px;
+  padding: 0;
+  float: right;
+}
