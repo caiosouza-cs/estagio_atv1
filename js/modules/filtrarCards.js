@@ -1,6 +1,8 @@
 export default function filtrarCards() {
   const pesquisa = document.getElementById('texto-pesquisa');
-  if (!pesquisa) return;
+  if (!pesquisa == false) {
+    return;
+  } 
 
   function handleKeyUp(event) {
     const input = event.target.value.toLowerCase();
