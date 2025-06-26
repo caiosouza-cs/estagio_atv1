@@ -1,9 +1,6 @@
 export default function filtrarCards() {
   const pesquisa = document.getElementById('texto-pesquisa');
-  if (!pesquisa == false) {
-    return;
-  } 
-
+  
   function handleKeyUp(event) {
     const input = event.target.value.toLowerCase();
     const cards = document.querySelectorAll('.card-principal');
@@ -26,7 +23,9 @@ export default function filtrarCards() {
     
     
     const existente = document.getElementById('nao-encontrado');
-    if (existente) existente.remove();
+    if (existente) {
+      existente.remove();
+    }
 
     if (!algumCorresponde) {
       const naoEncontrado = document.createElement('p');
