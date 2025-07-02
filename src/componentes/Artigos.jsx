@@ -31,7 +31,7 @@ const Artigos = () => {
             <h2 className="titulo">{post.titulo}</h2>
             <p className="conteudo">{post.conteudo}</p>
             <button className="ler-mais" onClick={() => abrirModal(post)}>
-              ⏷
+              ler mais
             </button>
           </section>
         </div>

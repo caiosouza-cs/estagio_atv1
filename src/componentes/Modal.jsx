@@ -12,7 +12,7 @@ const Modal = ({ post, onClose }) => {
           <Data novaData={post.data} />
           <button className="like">♡</button>
           <button className="modal-fechar" onClick={onClose}>
-            ⏶
+            x
           </button>
         </div>
 
