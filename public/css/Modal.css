@@ -130,7 +130,12 @@
   border-radius: 4px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 400px) {
+  .overlay {
+    margin:0px;
+    padding: 10px;
+  }
+
   .modal {
     width: 100%;
     height: auto;
