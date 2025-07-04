@@ -22,7 +22,7 @@ const Artigos = () => {
     <>
       {posts.map((post, indice) => (
         <div
-          className="card-principal"
+          className="card-principal animaCard"
           key={indice}
           onClick={() => abrirModal(post)}
         >

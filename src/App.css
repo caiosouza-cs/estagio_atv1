@@ -1,0 +1,38 @@
+.animaModal {
+  opacity: 0;
+  transform: translateZ(-40px);
+  animation: animaModal .8s forwards;
+}
+
+@keyframes animaModal {
+  to {
+    opacity: 1;
+    transform: initial;
+  }
+}
+
+.animaCabecalho {
+  opacity: 0;
+  transform: translateY(-40px);
+  animation: animaCabecalho 0.3s forwards;
+}
+
+@keyframes animaCabecalho {
+  to {
+    opacity: 1;
+    transform: initial;
+  }
+}
+
+.animaCard {
+  opacity: 0;
+  transform: translateX(-40px);
+  animation: animaCard .8s forwards;
+}
+
+@keyframes animaCard {
+  to {
+    opacity: 1;
+    transform: initial;
+  }
+}

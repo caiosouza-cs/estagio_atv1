@@ -3,9 +3,9 @@ import React from 'react';
 const Logo = () => {
   return (
     <div>
-      <div className="logo">
+      <div className="logo  animaCabecalho">
         {' '}
-        Code<span className="logo destaque">Lab</span>
+        Code<span className="logo destaque  animaCabecalho">Lab</span>
       </div>
     </div>
   );

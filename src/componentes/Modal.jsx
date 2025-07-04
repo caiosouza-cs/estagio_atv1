@@ -7,7 +7,7 @@ const Modal = ({ post, onClose }) => {
 
   return (
     <div className="overlay" onClick={onClose}>
-      <div className="modal" onClick={(e) => e.stopPropagation()}>
+      <div className="modal animaModal" onClick={(e) => e.stopPropagation()}>
         <div className="modal-header">
           <Data novaData={post.data} />
           <button className="like">♡</button>
