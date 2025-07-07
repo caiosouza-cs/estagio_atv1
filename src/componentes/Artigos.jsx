@@ -2,6 +2,7 @@ import React from 'react';
 import Data from './Data';
 import Modal from './Modal';
 import { GlobalContext } from './GlobalContext';
+import Like from './Like';
 
 const Artigos = () => {
   const { posts } = React.useContext(GlobalContext);
@@ -24,9 +25,10 @@ const Artigos = () => {
         <div
           className="card-principal animaCard"
           key={indice}
-          onClick={() => abrirModal(post)}
+          // onClick={() => abrirModal(post)}
         >
           <Data novaData={post.data} />
+          <Like id={post.id} />
           <section>
             <h2 className="titulo">{post.titulo}</h2>
             <p className="conteudo">{post.conteudo}</p>

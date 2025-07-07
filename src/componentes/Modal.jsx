@@ -1,26 +1,30 @@
-import React from 'react';
 import Data from './Data';
-import { GlobalContext } from './GlobalContext';
+import Like from './Like';
+
+import style from '../styles/Modal.module.css';
 
 const Modal = ({ post, onClose }) => {
   if (!post) return null;
 
   return (
-    <div className="overlay" onClick={onClose}>
-      <div className="modal animaModal" onClick={(e) => e.stopPropagation()}>
-        <div className="modal-header">
+    <div className={style.overlay} onClick={onClose}>
+      <div
+        className={`${style.modal} animaModal`}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className={style['modal-header']}>
           <Data novaData={post.data} />
-          <button className="like">♡</button>
-          <button className="modal-fechar" onClick={onClose}>
+          <Like id={post.id} />
+          <button className={style['modal-fechar']} onClick={onClose}>
             x
           </button>
         </div>
 
-        <h2 className="titulo">{post.titulo}</h2>
+        <h2 className={style.titulo}>{post.titulo}</h2>
 
-        <div className="modal-body">
+        <div className={style['modal-body']}>
           <img
-            className="imagem-capa"
+            className={style['imagem-capa']}
             src={post.imagem_capa}
             alt="Imagem de capa"
           />
