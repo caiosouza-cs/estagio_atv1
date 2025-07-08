@@ -28,7 +28,7 @@ const Modal = ({ post, onClose }) => {
             src={post.imagem_capa}
             alt="Imagem de capa"
           />
-          <p className="conteudo-modal">{post.conteudo}</p>
+          <p className={style['conteudo-modal']}> {post.conteudo}</p>
         </div>
       </div>
     </div>
