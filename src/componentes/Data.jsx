@@ -1,4 +1,5 @@
 import React from 'react';
+import style from '../styles/Cards.module.css';
 
 const Data = ({ novaData }) => {
   const data = new Date(novaData.replace(/-/g, '/'));
@@ -12,7 +13,7 @@ const Data = ({ novaData }) => {
 
   dataFormatada = dataFormatada.replace('. de ', ', ');
 
-  return <h4 className="data">{dataFormatada}</h4>;
+  return <h4 className={style.data}>{dataFormatada}</h4>;
 };
 
 export default Data;

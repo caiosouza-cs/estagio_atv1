@@ -4,6 +4,8 @@ import Modal from './Modal';
 import { GlobalContext } from './GlobalContext';
 import Like from './Like';
 
+import style from '../styles/Cards.module.css';
+
 const Artigos = () => {
   const { posts } = React.useContext(GlobalContext);
   const [modalAberto, setModalAberto] = React.useState(false);
@@ -23,16 +25,19 @@ const Artigos = () => {
     <>
       {posts.map((post, indice) => (
         <div
-          className="card-principal animaCard"
+          className={`${style['card-principal']} ${style.animaCard}`}
           key={indice}
           // onClick={() => abrirModal(post)}
         >
           <Data novaData={post.data} />
-          <Like id={post.id} />
+          <Like className={style.like} id={post.id} />
           <section>
-            <h2 className="titulo">{post.titulo}</h2>
-            <p className="conteudo">{post.conteudo}</p>
-            <button className="ler-mais" onClick={() => abrirModal(post)}>
+            <h2 className={style.titulo}>{post.titulo}</h2>
+            <p className={style.conteudo}>{post.conteudo}</p>
+            <button
+              className={style['ler-mais']}
+              onClick={() => abrirModal(post)}
+            >
               ler mais
             </button>
           </section>
