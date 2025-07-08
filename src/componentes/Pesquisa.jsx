@@ -39,6 +39,7 @@ const Pesquisa = () => {
 
     if (!algumCorresponde) {
       const naoEncontrado = document.createElement('p');
+      naoEncontrado.classList.add('animaCard');
       naoEncontrado.id = 'nao-encontrado';
       naoEncontrado.textContent = 'Não há artigos relacionados';
       cardsNavegacao.appendChild(naoEncontrado);
