@@ -13,7 +13,7 @@ const App = () => {
         <Pesquisa />
       </section>
 
-      <section className="navegacao" id="cards-navegacao">
+      <section className="navegacao animaCard" id="cards-navegacao">
         <Artigos />
       </section>
     </GlobalStorage>
