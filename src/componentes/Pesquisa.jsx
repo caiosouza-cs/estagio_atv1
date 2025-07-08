@@ -1,4 +1,5 @@
 import React from 'react';
+import style from '../styles/Cabecalho.module.css';
 
 const Pesquisa = () => {
   const [busca, setBusca] = React.useState('');
@@ -47,10 +48,10 @@ const Pesquisa = () => {
   }, [busca]);
 
   return (
-    <form className="pesquisa">
-      <div className="busca">
+    <form className={style.pesquisa}>
+      <div className={style.busca}>
         <input
-          className="texto-pesquisa"
+          className={style['texto-pesquisa']}
           id="texto-pesquisa"
           type="text"
           placeholder="Pesquisar no blog"

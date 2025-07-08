@@ -36,3 +36,9 @@
     transform: initial;
   }
 }
+
+.cabecalho {
+  background: #17171A;
+  text-align: center;
+  padding-top: 40px;
+}
