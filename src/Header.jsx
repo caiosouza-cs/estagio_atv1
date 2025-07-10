@@ -3,6 +3,7 @@ import Logo from './componentes/Logo.jsx';
 import Pesquisa from './componentes/Pesquisa.jsx';
 import { NavLink } from 'react-router-dom';
 import './styles/header.css';
+import HeartFilled from './icons/HeartFilled.jsx';
 
 const Header = () => {
   return (
@@ -28,7 +29,7 @@ const Header = () => {
           </li>
           <li>
             <NavLink to="Favoritos" className="navLink">
-              Favoritos{' '}
+              Favoritos
             </NavLink>
           </li>
         </ul>

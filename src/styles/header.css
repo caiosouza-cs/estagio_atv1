@@ -5,6 +5,12 @@
   padding: 0.5rem 1rem;
   border: 2px solid #252529;
   border-radius: 4px;
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #AFABB6;
 }
 
 .active {
