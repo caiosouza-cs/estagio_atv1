@@ -2,6 +2,7 @@
   background: #17171A;
   text-align: center;
   padding-top: 40px;
+  padding-bottom: 30px;
 }
 
 .logo {
@@ -45,6 +46,5 @@ color: #FFFFFF;
 }
 
 .pesquisa {
-  padding-bottom: 32px;
   padding-top: 32px;
 }

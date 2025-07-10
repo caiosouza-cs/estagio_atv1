@@ -1,23 +1,25 @@
 import React from 'react';
 import './App.css';
-import Logo from './componentes/Logo';
-import Pesquisa from './componentes/Pesquisa';
 import Artigos from './componentes/Artigos';
 import { GlobalStorage } from './componentes/GlobalContext';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Header from './Header';
+import Home from './Home';
+import Favoritos from './Favoritos';
 
 const App = () => {
   return (
     <GlobalStorage>
-      <section className="cabecalho animaCabecalho">
-        <Logo />
-        <Pesquisa />
-      </section>
-
-      <section className="navegacao" id="cards-navegacao">
-        <Artigos />
-      </section>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="Favoritos" element={<Favoritos />} />
+        </Routes>
+      </BrowserRouter>
     </GlobalStorage>
   );
+  2;
 };
 
 export default App;

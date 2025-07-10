@@ -1,13 +1,15 @@
 import React from 'react';
-import Data from './Data';
-import Modal from './Modal';
-import { GlobalContext } from './GlobalContext';
-import Like from './Like';
+import { GlobalContext } from './componentes/GlobalContext';
+import Modal from './componentes/Modal';
+import Data from './componentes/Data';
+import Like from './componentes/Like';
 
-const Artigos = () => {
-  const { posts } = React.useContext(GlobalContext);
+const Favoritos = () => {
+  const { likedPosts, posts } = React.useContext(GlobalContext);
   const [modalAberto, setModalAberto] = React.useState(false);
   const [postSelecionado, setPostSelecionado] = React.useState(null);
+
+  const favoritos = posts.filter((post) => likedPosts.includes(post.id));
 
   function abrirModal(post) {
     setModalAberto(true);
@@ -20,13 +22,9 @@ const Artigos = () => {
   }
 
   return (
-    <>
-      {posts.map((post, id) => (
-        <div
-          className="card-principal animaCard"
-          key={id}
-          // onClick={() => abrirModal(post)}
-        >
+    <section className="navegacao" id="cards-navegacao">
+      {favoritos.map((post, id) => (
+        <div className="card-principal animaCard" key={id}>
           <Data novaData={post.data} />
           <Like id={post.id} />
           <section>
@@ -41,8 +39,8 @@ const Artigos = () => {
       {modalAberto && (
         <Modal post={postSelecionado} onClose={() => fecharModal()} />
       )}
-    </>
+    </section>
   );
 };
 
-export default Artigos;
+export default Favoritos;

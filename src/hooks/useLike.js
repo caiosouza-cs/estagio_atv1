@@ -6,13 +6,10 @@ export const useLike = ({ id }) => {
   const [isLiked, setIsLiked] = useState(false);
 
   useEffect(() => {
-    console.log('running usememo', id, likedPosts);
     setIsLiked(!!likedPosts?.find((item) => item === id));
   }, [id, likedPosts]);
 
   const handleLike = () => {
-    console.log('running handleLike', id, isLiked);
-
     const newLikedPosts = isLiked
       ? likedPosts.filter((item) => item !== id)
       : [...likedPosts, id];
