@@ -29,7 +29,7 @@ const Header = () => {
           </li>
           <li>
             <NavLink to="Favoritos" className="navLink">
-              Favoritos
+              Favoritos <span>❤</span>
             </NavLink>
           </li>
         </ul>
