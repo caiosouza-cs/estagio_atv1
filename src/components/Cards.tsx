@@ -35,8 +35,12 @@ const Cards = () => {
           <Data novaData={post.data} />
           <Like id={post.id} />
           <section>
-            <h2 className={style.titulo}>{post.titulo}</h2>
-            <p className={style.conteudo}>{post.conteudo}</p>
+            <h2 className={style.titulo} id="titulo">
+              {post.titulo}
+            </h2>
+            <p className={style.conteudo} id="conteudo">
+              {post.conteudo}
+            </p>
             <button className={style.lerMais} onClick={() => abrirModal(post)}>
               ler mais
             </button>

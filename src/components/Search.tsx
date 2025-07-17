@@ -6,6 +6,8 @@ const Search = () => {
 
   React.useEffect(() => {
     const cards = document.querySelectorAll<HTMLElement>('#cardPrincipal');
+    console.log(cards);
+
     let algumCorresponde = false;
 
     if (busca.trim() === '') {
@@ -18,8 +20,8 @@ const Search = () => {
     const termo = busca.toLowerCase();
 
     cards.forEach((card) => {
-      const tituloEl = card.querySelector<HTMLElement>('.titulo');
-      const conteudoEl = card.querySelector<HTMLElement>('.conteudo');
+      const tituloEl = card.querySelector<HTMLElement>('#titulo');
+      const conteudoEl = card.querySelector<HTMLElement>('#conteudo');
 
       const titulo = tituloEl?.textContent?.toLowerCase() || '';
       const conteudo = conteudoEl?.textContent?.toLowerCase() || '';
@@ -33,7 +35,7 @@ const Search = () => {
       card.style.display = corresponde ? 'block' : 'none';
     });
 
-    const cardsNavegacao = document.getElementById('cards-navegacao');
+    const cardsNavegacao = document.getElementById('cardsNavegacao');
     const existente = document.getElementById('nao-encontrado');
     if (existente) {
       existente.remove();
