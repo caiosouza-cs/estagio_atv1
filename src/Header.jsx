@@ -1,14 +1,36 @@
-import React from 'react';
+import { NavLink } from 'react-router-dom';
+import { useContext } from 'react';
+
+import { GlobalContext } from './componentes/GlobalContext.jsx';
 import Logo from './componentes/Logo.jsx';
 import Pesquisa from './componentes/Pesquisa.jsx';
-import { NavLink } from 'react-router-dom';
+
 import './styles/header.css';
-import HeartFilled from './icons/HeartFilled.jsx';
+import Logout from './componentes/Logout.jsx';
+
 
 const Header = () => {
+  const {session} = useContext(GlobalContext)
+
+  console.log('session: ', session)
+
   return (
     <section className="cabecalho animaCabecalho">
-      <Logo />
+      <div style={{display: "flex", justifyContent: "space-around", alignItems: "center", padding: "12px 0"}}>
+        <Logo />
+
+        <div>
+          {
+            session ? 
+            <>
+              <p>Bem vindo, {session.user.email}</p> 
+              <Logout />
+            </>
+              :
+            <NavLink to="/login">Login</NavLink>
+          }
+        </div>
+      </div>
       <Pesquisa />
       <div
         style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}

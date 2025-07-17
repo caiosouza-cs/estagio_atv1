@@ -1,4 +1,5 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import supabase from '../utils/supabase';
 
 export const GlobalContext = React.createContext();
 
@@ -6,6 +7,19 @@ export const GlobalStorage = ({ children }) => {
   const [posts, setPosts] = React.useState([]);
   const likedPostsStorage = window.localStorage.getItem('likedPostsStorage');
   const [likedPosts, setLikedPosts] = useState([]);
+  const [session, setSession] = useState(null)
+
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => setSession(session))
+
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session)
+    })
+
+    return () => subscription.unsubscribe()
+  }, [])
 
   useEffect(() => {
     if (!likedPostsStorage) return;
@@ -30,7 +44,7 @@ export const GlobalStorage = ({ children }) => {
 
   return (
     <GlobalContext.Provider
-      value={{ posts, setPosts, likedPosts, updateLikedPosts }}
+      value={{ posts, setPosts, likedPosts, updateLikedPosts, session }}
     >
       {children}
     </GlobalContext.Provider>

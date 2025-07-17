@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './Header';
 import Home from './Home';
 import Favoritos from './Favoritos';
+import Login from './componentes/Login';
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="Favoritos" element={<Favoritos />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </BrowserRouter>
     </GlobalStorage>
