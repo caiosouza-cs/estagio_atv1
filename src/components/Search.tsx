@@ -1,13 +1,14 @@
 import React from 'react';
+import style from '../css/Header.module.css';
 
-const Pesquisa = () => {
-  const [busca, setBusca] = React.useState('');
+const Search = () => {
+  const [busca, setBusca] = React.useState<string>('');
 
   React.useEffect(() => {
-    const cards = document.querySelectorAll('.card-principal');
+    const cards = document.querySelectorAll<HTMLElement>('#cardPrincipal');
     let algumCorresponde = false;
 
-    if (busca === '') {
+    if (busca.trim() === '') {
       cards.forEach((card) => {
         card.style.display = 'block';
       });
@@ -17,10 +18,11 @@ const Pesquisa = () => {
     const termo = busca.toLowerCase();
 
     cards.forEach((card) => {
-      const titulo = card.querySelector('.titulo').textContent.toLowerCase();
-      const conteudo = card
-        .querySelector('.conteudo')
-        .textContent.toLowerCase();
+      const tituloEl = card.querySelector<HTMLElement>('.titulo');
+      const conteudoEl = card.querySelector<HTMLElement>('.conteudo');
+
+      const titulo = tituloEl?.textContent?.toLowerCase() || '';
+      const conteudo = conteudoEl?.textContent?.toLowerCase() || '';
 
       const corresponde = titulo.includes(termo) || conteudo.includes(termo);
 
@@ -37,7 +39,7 @@ const Pesquisa = () => {
       existente.remove();
     }
 
-    if (!algumCorresponde) {
+    if (!algumCorresponde && cardsNavegacao) {
       const naoEncontrado = document.createElement('p');
       naoEncontrado.classList.add('animaCard');
       naoEncontrado.id = 'nao-encontrado';
@@ -47,10 +49,10 @@ const Pesquisa = () => {
   }, [busca]);
 
   return (
-    <form className="pesquisa">
-      <div className="busca">
+    <form className={style.pesquisa} onSubmit={(e) => e.preventDefault()}>
+      <div className={style.busca}>
         <input
-          className="texto-pesquisa"
+          className={style.textoPesquisa}
           id="texto-pesquisa"
           type="text"
           placeholder="Pesquisar no blog"
@@ -62,4 +64,4 @@ const Pesquisa = () => {
   );
 };
 
-export default Pesquisa;
+export default Search;

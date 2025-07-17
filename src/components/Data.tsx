@@ -1,6 +1,11 @@
 import React from 'react';
+import style from '../css/Cards.module.css';
 
-const Data = ({ novaData }) => {
+type DataProps = {
+  novaData: string;
+};
+
+const Data = ({ novaData }: DataProps) => {
   const data = new Date(novaData.replace(/-/g, '/'));
 
   const formatador = new Intl.DateTimeFormat('pt-BR', {
@@ -12,7 +17,7 @@ const Data = ({ novaData }) => {
 
   dataFormatada = dataFormatada.replace('. de ', ', ');
 
-  return <h4 className="data">{dataFormatada}</h4>;
+  return <h4 className={style.data}>{dataFormatada}</h4>;
 };
 
 export default Data;

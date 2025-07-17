@@ -1,28 +1,27 @@
 .cabecalho {
-  background: #17171A;
+  background: #17171a;
   text-align: center;
   padding-top: 40px;
   padding-bottom: 30px;
 }
 
 .logo {
-
   display: inline;
-width: 170px;
-height: 51px;
-font-family: 'Space Grotesk';
-font-size: 35px;
-line-height: 100%;
-letter-spacing: 0%;
-color: #E07B67;
-font-weight: bold;
+  width: 170px;
+  height: 51px;
+  font-family: 'Space Grotesk';
+  font-size: 35px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #e07b67;
+  font-weight: bold;
 }
 
 .logo .destaque {
-color: #FFFFFF;
+  color: #ffffff;
 }
 
-.texto-pesquisa {
+.textoPesquisa {
   width: 64%;
   height: 40px;
   font-family: Inter;
@@ -30,7 +29,7 @@ color: #FFFFFF;
   font-size: 20px;
   line-height: 100%;
   letter-spacing: 0%;
-  color: #AFABB6;
+  color: #afabb6;
   border: 2px solid #252528;
   background: #202024;
   border-radius: 4px;
@@ -47,4 +46,17 @@ color: #FFFFFF;
 
 .pesquisa {
   padding-top: 32px;
+}
+
+.animaCabecalho {
+  opacity: 0;
+  transform: translateY(-40px);
+  animation: animaCabecalho 0.3s forwards;
+}
+
+@keyframes animaCabecalho {
+  to {
+    opacity: 1;
+    transform: initial;
+  }
 }

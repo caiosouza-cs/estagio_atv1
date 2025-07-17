@@ -1,7 +1,11 @@
 import { useContext, useEffect, useState } from 'react';
-import { GlobalContext } from '../componentes/GlobalContext';
+import { GlobalContext } from '.././components/GlobalContext';
 
-export const useLike = ({ id }) => {
+type id = {
+  id: number;
+};
+
+export const useLike = ({ id }: id) => {
   const { likedPosts, updateLikedPosts } = useContext(GlobalContext);
   const [isLiked, setIsLiked] = useState(false);
 

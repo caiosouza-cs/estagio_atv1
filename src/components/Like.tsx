@@ -1,9 +1,13 @@
 import { useLike } from '../hooks/useLike';
 import Heart from '../icons/Heart';
 import HeartFilled from '../icons/HeartFilled';
-import style from '../styles/Modal.module.css';
+import style from '../css/Modal.module.css';
 
-const Like = ({ id }) => {
+type LikeProps = {
+  id: number;
+};
+
+const Like = ({ id }: LikeProps) => {
   const { isLiked, handleLike } = useLike({ id });
 
   return (

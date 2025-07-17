@@ -1,7 +1,6 @@
 import React from 'react';
-import './App.css';
-import Artigos from './componentes/Artigos';
-import { GlobalStorage } from './componentes/GlobalContext';
+import './css/App.css';
+import { GlobalStorage } from './components/GlobalContext';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './Header';
 import Home from './Home';

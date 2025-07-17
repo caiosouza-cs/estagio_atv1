@@ -1,9 +1,14 @@
 import Data from './Data';
 import Like from './Like';
+import style from '../css/Modal.module.css';
+import type { Post } from './GlobalContext';
 
-import style from '../styles/Modal.module.css';
+type ModalProps = {
+  post: Post;
+  onClose: () => void;
+};
 
-const Modal = ({ post, onClose }) => {
+const Modal = ({ post, onClose }: ModalProps) => {
   if (!post) return null;
 
   return (

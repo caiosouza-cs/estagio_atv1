@@ -1,15 +1,15 @@
 import React from 'react';
-import Logo from './componentes/Logo.jsx';
-import Pesquisa from './componentes/Pesquisa.jsx';
+import Logo from './icons/Logo.js';
+import Search from './components/Search.js';
 import { NavLink } from 'react-router-dom';
-import './styles/header.css';
-import HeartFilled from './icons/HeartFilled.jsx';
+import style from './css/Header.module.css';
+import './css/header.css';
 
 const Header = () => {
   return (
-    <section className="cabecalho animaCabecalho">
+    <section className={`${style.cabecalho} ${style.animaCabecalho}`}>
       <Logo />
-      <Pesquisa />
+      <Search />
       <div
         style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}
       >
