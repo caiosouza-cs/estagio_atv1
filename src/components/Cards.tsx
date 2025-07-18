@@ -1,9 +1,11 @@
 import React from 'react';
+
 import Data from './Data';
 import Modal from './Modal';
-import { GlobalContext } from './GlobalContext';
 import Like from './Like';
+import { GlobalContext } from './GlobalContext';
 import type { Post } from './GlobalContext';
+
 import style from '../css/Cards.module.css';
 
 const Cards = () => {

@@ -1,6 +1,8 @@
 import { useLike } from '../hooks/useLike';
+
 import Heart from '../icons/Heart';
 import HeartFilled from '../icons/HeartFilled';
+
 import style from '../css/Modal.module.css';
 
 type LikeProps = {

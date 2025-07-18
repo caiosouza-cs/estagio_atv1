@@ -1,4 +1,3 @@
-import React from 'react';
 import style from '../css/Cards.module.css';
 
 type DataProps = {

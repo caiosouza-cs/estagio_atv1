@@ -1,7 +1,9 @@
 import Data from './Data';
 import Like from './Like';
-import style from '../css/Modal.module.css';
+
 import type { Post } from './GlobalContext';
+
+import style from '../css/Modal.module.css';
 
 type ModalProps = {
   post: Post;
