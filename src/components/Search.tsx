@@ -6,7 +6,6 @@ const Search = () => {
 
   React.useEffect(() => {
     const cards = document.querySelectorAll<HTMLElement>('#cardPrincipal');
-    console.log(cards);
 
     let algumCorresponde = false;
 

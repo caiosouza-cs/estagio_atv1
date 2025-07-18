@@ -28,12 +28,22 @@ const Favoritos = () => {
   return (
     <section className={style.cardsNavegacao}>
       {favoritos.map((post, id) => (
-        <div className={`${style.cardPrincipal} ${style.animaCard}`} key={id}>
+        <div
+          className={`${style.cardPrincipal} ${style.animaCard}`}
+          key={id}
+          id="cardPrincipal"
+        >
           <Data novaData={post.data} />
           <Like id={post.id} />
           <section>
-            <h2 className={style.titulo}> {post.titulo} </h2>
-            <p className={style.conteudo}> {post.conteudo} </p>
+            <h2 className={style.titulo} id="titulo">
+              {' '}
+              {post.titulo}{' '}
+            </h2>
+            <p className={style.conteudo} id="conteudo">
+              {' '}
+              {post.conteudo}{' '}
+            </p>
             <button className={style.lerMais} onClick={() => abrirModal(post)}>
               ler mais
             </button>
