@@ -7,19 +7,21 @@ export const GlobalStorage = ({ children }) => {
   const [posts, setPosts] = React.useState([]);
   const likedPostsStorage = window.localStorage.getItem('likedPostsStorage');
   const [likedPosts, setLikedPosts] = useState([]);
-  const [session, setSession] = useState(null)
+  const [session, setSession] = useState(null);
 
   useEffect(() => {
-    supabase.auth.getSession().then(({ data: { session } }) => setSession(session))
+    supabase.auth
+      .getSession()
+      .then(({ data: { session } }) => setSession(session));
 
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange((_event, session) => {
-      setSession(session)
-    })
+      setSession(session);
+    });
 
-    return () => subscription.unsubscribe()
-  }, [])
+    return () => subscription.unsubscribe();
+  }, []);
 
   useEffect(() => {
     if (!likedPostsStorage) return;
@@ -34,9 +36,19 @@ export const GlobalStorage = ({ children }) => {
 
   React.useEffect(() => {
     async function fetchPosts() {
-      const response = await fetch('./posts.json');
-      const json = await response.json();
-      setPosts(json);
+      try {
+        const { data, error } = await supabase.from('posts').select();
+
+        if (error) {
+          console.error('Houve um erro ao recuperar os dados do banco.'.error);
+        }
+
+        if (data) {
+          setPosts(data);
+        }
+      } catch (e) {
+        console.error('Houve um erro durante a requisição.'.error);
+      }
     }
 
     fetchPosts();

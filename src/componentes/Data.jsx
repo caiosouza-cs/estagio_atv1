@@ -1,18 +1,14 @@
 import React from 'react';
 
 const Data = ({ novaData }) => {
-  const data = new Date(novaData.replace(/-/g, '/'));
-
-  const formatador = new Intl.DateTimeFormat('pt-BR', {
+  const data = new Date(novaData).toLocaleString('pt-BR', {
+    weekday: 'long',
     day: '2-digit',
-    month: 'short',
-    year: 'numeric',
+    month: '2-digit',
+    year: '2-digit',
   });
-  let dataFormatada = formatador.format(data);
 
-  dataFormatada = dataFormatada.replace('. de ', ', ');
-
-  return <h4 className="data">{dataFormatada}</h4>;
+  return <h4 className="data">{data}</h4>;
 };
 
 export default Data;
